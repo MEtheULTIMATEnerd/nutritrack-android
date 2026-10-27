@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">NutriTrack</string>
+    <string name="title_activity_sign_in_screen">SignInScreen</string>
+    <string name="title_activity_home_screen">HomeScreen</string>
+    <string name="title_activity_food_questionnaire_screen">FoodQuestionnaireScreen</string>
+    <string name="title_activity_validate_user_input">validateUserInput</string>
+    <string name="title_activity_user_data_utils">UserDataUtils</string>
+    <string name="title_activity_user_data">UserData</string>
+    <string name="title_activity_insights_screen">InsightsScreen</string>
+    <string name="title_activity_preference_utils.kt">PreferenceUtils.kt</string>
+    <string name="title_activity_nutri_coach_screen">NutriCoachScreen</string>
+    <string name="title_activity_settings_screen">SettingsScreen</string>
+    <string name="title_activity_patient">Patient</string>
+    <string name="title_activity_food_intake">FoodIntake</string>
+    <string name="title_activity_food_intake.kt">FoodIntake.kt</string>
+    <string name="title_activity_nutri_coach_tip">NutriCoachTip</string>
+    <string name="title_activity_patient_dao">PatientDao</string>
+    <string name="title_activity_food_intake_dao">FoodIntakeDao</string>
+    <string name="title_activity_nutri_coach_tip_dao">NutriCoachTipDao</string>
+    <string name="title_activity_app_database">AppDatabase</string>
+    <string name="title_activity_database_seeder">DatabaseSeeder</string>
+    <string name="title_activity_debug_patient_list_screen">DebugPatientListScreen</string>
+    <string name="title_activity_nutri_track_repository">NutriTrackRepository</string>
+    <string name="title_activity_register_screen">RegisterScreen</string>
+    <string name="title_activity_session_utils">SessionUtils</string>
+    <string name="title_activity_clinician_login_screen">ClinicianLoginScreen</string>
+    <string name="title_activity_fruity_vice_api">FruityViceApi</string>
+    <string name="title_activity_retrofit_instance">RetrofitInstance</string>
+    <string name="title_activity_fruit_repository">FruitRepository</string>
+    <string name="title_activity_motivation_utils">MotivationUtils</string>
+    <string name="title_activity_motivational_tip">MotivationalTip</string>
+    <string name="title_activity_motivational_tip_dao">MotivationalTipDao</string>
+    <string name="title_activity_gemini_service">GeminiService</string>
+</resources>

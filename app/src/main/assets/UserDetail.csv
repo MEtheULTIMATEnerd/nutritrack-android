@@ -1,0 +1,3 @@
+PhoneNumber,User_ID,Sex,Total_Male,Total_Female,Discretionary,Vegetables,Fruit,Grains,Meat,Dairy,Water,Fats,Sodium,Added_Sugars,Alcohol
+0400000000,DEMO-0001,Female,75,78,6,8,7,7,6,7,8,7,8,7,8
+0400000001,DEMO-0002,Male,72,70,7,7,6,8,7,6,7,7,7,6,7

@@ -1,0 +1,3 @@
+# Copy to gradle.properties or ~/.gradle/gradle.properties for local-only testing.
+# Do not commit real API keys. A key in an Android APK is recoverable by anyone.
+GEMINI_API_KEY=
