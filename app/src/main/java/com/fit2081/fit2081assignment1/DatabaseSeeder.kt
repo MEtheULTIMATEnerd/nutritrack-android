@@ -21,7 +21,6 @@ object DatabaseSeeder {
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val patientDao = db.patientDao()  // Get DAO for accessing Patient table
-                val foodIntakeDao = db.foodIntakeDao()  // Unused here but prepared if needed
 
                 // Check if any patient data already exists in the DB
                 val count = patientDao.getPatientCount()
@@ -35,10 +34,10 @@ object DatabaseSeeder {
 
                     // Read each line and convert it into a Patient object
                     while (reader.readLine().also { line = it } != null) {
-                        val tokens = line!!.split(",")
+                        val tokens = line!!.split(",", limit = 16)
 
                         // Ensure the CSV line has enough fields
-                        if (tokens.size >= 17) {
+                        if (tokens.size >= 16) {
                             val patient = Patient(
                                 userId = tokens[1].trim(),         // User ID
                                 phoneNumber = tokens[0].trim(),    // Phone number

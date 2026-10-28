@@ -13,7 +13,7 @@ data class Patient(
     @PrimaryKey val userId: String,                  // Unique identifier for each user (primary key).
     val phoneNumber: String,                         // Patient's phone number.
     val name: String,                                // Patient's name.
-    val password: String,                            // Patient's password (stored as plain text here—consider hashing for security).
+    val password: String,                            // PBKDF2 password hash for claimed demo accounts.
     val sex: String,                                 // Patient's sex (used to determine which score to display).
 
     // Optional nutritional scores (nullable) based on gender and food category.

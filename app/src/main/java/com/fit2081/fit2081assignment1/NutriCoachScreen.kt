@@ -98,6 +98,7 @@ fun NutriCoachScreen(navController: NavController) {
     var fruitData by remember { mutableStateOf<FruitResponse?>(null) } // Stores response from FruityVice API
     var motivationMessage by remember { mutableStateOf("") }           // Stores motivational message
     var isLoading by remember { mutableStateOf(false) }                // Used to show loading state
+    var errorMessage by remember { mutableStateOf("") }
     val tipList = remember { mutableStateListOf<String>() }            // Stores list of all tips
     var showDialog by remember { mutableStateOf(false) }               // Flag to show tip list dialog
 
@@ -135,12 +136,18 @@ fun NutriCoachScreen(navController: NavController) {
             // Button to fetch fruit nutrition data from API
             Button(
                 onClick = {
+                    if (fruitName.isBlank()) {
+                        errorMessage = "Enter a fruit name first."
+                        return@Button
+                    }
+                    errorMessage = ""
                     isLoading = true
                     coroutineScope.launch {
                         try {
                             fruitData = fruitRepository.fetchFruitNutrition(fruitName.lowercase())
                         } catch (e: Exception) {
                             fruitData = null
+                            errorMessage = "Fruit data is unavailable. Check your connection or try another fruit."
                         }
                         isLoading = false
                     }
@@ -150,6 +157,10 @@ fun NutriCoachScreen(navController: NavController) {
                     .fillMaxWidth()
             ) {
                 Text("Details")
+            }
+
+            if (errorMessage.isNotBlank()) {
+                Text(errorMessage, color = MaterialTheme.colorScheme.error, modifier = Modifier.padding(bottom = 8.dp))
             }
 
             // Display the fruit data if available
@@ -169,6 +180,10 @@ fun NutriCoachScreen(navController: NavController) {
             // Button to request motivational message using Gemini
             Button(
                 onClick = {
+                    if (fruitName.isBlank()) {
+                        errorMessage = "Enter a fruit name before requesting a tip."
+                        return@Button
+                    }
                     coroutineScope.launch {
                         isLoading = true
                         motivationMessage = GeminiService.getMotivationalMessage(

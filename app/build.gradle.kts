@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.fit2081.fit2081assignment1"
-        minSdk = 35
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -49,10 +49,6 @@ android {
 
 dependencies {
 
-    implementation("com.aallam.openai:openai-client:3.2.0")
-    implementation("io.ktor:ktor-client-okhttp:2.3.3")
-    implementation("io.ktor:ktor-client-content-negotiation:2.3.3")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.3")
     implementation("io.ktor:ktor-client-core:2.3.4")
     implementation("io.ktor:ktor-client-cio:2.3.4")
     implementation("io.ktor:ktor-client-content-negotiation:2.3.4")

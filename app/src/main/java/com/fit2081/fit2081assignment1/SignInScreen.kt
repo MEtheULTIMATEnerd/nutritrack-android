@@ -160,8 +160,8 @@ fun SignInScreen(navController: NavController) {
                     else -> {
                         CoroutineScope(Dispatchers.IO).launch {
                             val db = AppDatabase.getDatabase(context)
-                            val patient = db.patientDao().authenticateUser(selectedUserId, password)
-                            if (patient != null) {
+                            val patient = db.patientDao().getPatientById(selectedUserId)
+                            if (patient != null && PasswordHasher.verify(password, patient.password)) {
                                 // Save session
                                 saveSession(context, selectedUserId)
                                 withContext(Dispatchers.Main) {

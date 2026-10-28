@@ -23,8 +23,8 @@ The included `app/src/main/assets/UserDetail.csv` contains synthetic `DEMO-*` re
 
 ## Verification status
 
-- The Kotlin/Android build was not completed in this environment because the Gradle wrapper could not access the user Gradle distribution cache under the sandbox restrictions.
-- Emulator, Room migration and network integration tests therefore remain unverified here.
+- The Gradle distribution download was allowed, but the build process terminated after daemon startup without producing a diagnostic result; Kotlin/Room compilation remains unverified here.
+- Emulator, Room migration and network integration tests remain unverified.
 - The portfolio copy removes invalid manifest activity declarations, supplies the missing logo reference through the existing launcher resource, and adds synthetic seed data so the documented local flow has a reproducible input format.
 
 ## Security and publication notes
@@ -37,3 +37,4 @@ The previously hard-coded Gemini credential was removed from this copy. Rotate t
 - Removed the embedded Gemini key and added a disabled-by-default BuildConfig configuration path.
 - Reduced the manifest to the actual launcher activity.
 - Added synthetic seed data, Android-focused ignore rules and configuration documentation.
+- Added PBKDF2 password hashing and a regression test, removed unused OpenAI and duplicate Ktor dependencies, and added clearer NutriCoach error states.

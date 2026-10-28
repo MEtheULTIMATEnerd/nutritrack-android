@@ -213,7 +213,7 @@ fun RegisterScreen(navController: NavController) {
                             val db = AppDatabase.getDatabase(context)
                             val patient = db.patientDao().findPatientByIdAndPhone(selectedUserId, phoneNumber)
                             if (patient != null) {
-                                db.patientDao().updatePassword(selectedUserId, password)
+                                db.patientDao().updatePassword(selectedUserId, PasswordHasher.hash(password))
                                 withContext(Dispatchers.Main) {
                                     successMessage = "Registration successful! Please login."
                                 }
